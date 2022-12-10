@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+}
+apply from: '../dependencies.gradle'
+
+android {
+    namespace 'com.akscorp.network'
+    compileSdk base.targetSDK
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation androidLibs.okhttp
+
+    implementation androidLibs.retrofit
+    implementation androidLibs.retrofitScalars
+
+
+    kapt androidLibs.daggerAnnotations
+    kapt androidLibs.daggerCompiler
+
+    implementation androidLibs.daggerAndroid
+}

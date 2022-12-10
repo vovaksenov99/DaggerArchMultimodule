@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+}
+apply from: '../dependencies.gradle'
+
+android {
+    namespace 'com.akscorp.navigation'
+    compileSdk base.targetSDK
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(":core")
+
+    implementation androidLibs.coreKtx
+    implementation androidLibs.cicerone
+
+    kapt androidLibs.daggerAnnotations
+    kapt androidLibs.daggerCompiler
+
+    implementation androidLibs.daggerAndroid
+}

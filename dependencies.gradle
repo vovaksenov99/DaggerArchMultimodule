@@ -1,0 +1,42 @@
+ext {
+
+    base = [
+            targetSDK: 33,
+            minSDK   : 23
+    ]
+
+    versions = [
+            dagger          : "2.44.2",
+            retrofit        : "2.9.0",
+            retrofitScalars : "2.1.0",
+            okhttp          : "4.10.0",
+            espresso        : "3.5.0",
+            junitExt        : "1.1.4",
+            junit           : "4.13.2",
+            lifecycle       : "2.5.1",
+            constraintlayout: "2.1.4",
+            material        : "1.7.0",
+            appcompat       : "1.5.1",
+            coreKtx         : "1.9.0",
+            cicerone        : "7.1",
+    ]
+
+    androidLibs = [
+            daggerAndroid       : "com.google.dagger:dagger-android:${versions.dagger}",
+            daggerCompiler      : "com.google.dagger:dagger-compiler:${versions.dagger}",
+            daggerAnnotations   : "com.google.dagger:dagger-android-processor:${versions.dagger}",
+            retrofit            : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+            retrofitScalars     : "com.squareup.retrofit2:converter-scalars:${versions.retrofitScalars}",
+            okhttp              : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+            espresso            : "androidx.test.espresso:espresso-core:${versions.espresso}",
+            junitExt            : "androidx.test.ext:junit:${versions.junitExt}",
+            junit               : "junit:junit:${versions.junit}",
+            lifecycleViewModel  : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
+            lifecycleLiveData   : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
+            constraintlayout    : "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+            material            : "com.google.android.material:material:${versions.material}",
+            appcompat           : "androidx.appcompat:appcompat:${versions.appcompat}",
+            coreKtx             : "androidx.core:core-ktx:${versions.coreKtx}",
+            cicerone            : "com.github.terrakok:cicerone:${versions.cicerone}",
+    ]
+}

@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+}
+apply from: '../dependencies.gradle'
+
+android {
+    namespace 'com.akscorp.screenB'
+    compileSdk base.targetSDK
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(":core")
+    implementation project(":navigation")
+
+    implementation project(':screenAApi')
+
+    implementation androidLibs.retrofit
+
+    implementation androidLibs.cicerone
+
+    implementation androidLibs.coreKtx
+    implementation androidLibs.appcompat
+    implementation androidLibs.material
+    implementation androidLibs.constraintlayout
+    implementation androidLibs.lifecycleViewModel
+    implementation androidLibs.lifecycleLiveData
+
+    kapt androidLibs.daggerAnnotations
+    kapt androidLibs.daggerCompiler
+
+    implementation androidLibs.daggerAndroid
+}
